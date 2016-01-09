@@ -10,8 +10,8 @@ import RealmSwift
 
 class QuestionsModel: Object {
     dynamic var id = 0
-    dynamic var imageData = "image1.jpg"
-    dynamic var answer = "1"
+    dynamic var imageData = "image0.jpg"
+    dynamic var answer = 1
     dynamic var success = 0
     dynamic var failure = 0
     

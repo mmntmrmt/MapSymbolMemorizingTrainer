@@ -273,10 +273,96 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="h2Y-ks-wI9"/>
+                    <connections>
+                        <outlet property="QuestionUIImageView" destination="c4w-Sd-OyK" id="EHe-bg-AO4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGT-4d-eo8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908" y="349"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="qcM-sX-Rq4">
+            <objects>
+                <viewController storyboardIdentifier="ResultView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lGh-be-5dt" customClass="ResultViewController" customModule="MapSymbolMemorizingTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oy8-fu-D1a"/>
+                        <viewControllerLayoutGuide type="bottom" id="fv6-Se-P2b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0ZT-NP-rcg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeY-iN-VUi">
+                                <rect key="frame" x="183" y="417" width="235" height="79"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="rkc-m4-tfc"/>
+                                    <constraint firstAttribute="width" constant="235" id="vAp-it-qvN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="トップ画面に戻る">
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backUIButtonTouchUpInside:" destination="lGh-be-5dt" eventType="touchUpInside" id="rki-lW-EWo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSb-RD-m7N">
+                                <rect key="frame" x="71" y="186" width="23.5" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-ye-Xzt">
+                                <rect key="frame" x="134" y="185" width="66" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fo5-Sv-v7v">
+                                <rect key="frame" x="232" y="186" width="28" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問正解しました" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al3-gX-oHS">
+                                <rect key="frame" x="299" y="185" width="231" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QeY-iN-VUi" firstAttribute="top" secondItem="Fo5-Sv-v7v" secondAttribute="bottom" constant="191.5" id="304-0A-WPs"/>
+                            <constraint firstItem="cS4-ye-Xzt" firstAttribute="centerY" secondItem="0ZT-NP-rcg" secondAttribute="centerY" constant="-95.25" id="33e-4J-BTV"/>
+                            <constraint firstItem="Al3-gX-oHS" firstAttribute="centerX" secondItem="0ZT-NP-rcg" secondAttribute="centerX" constant="114.5" id="D0c-dr-fzx"/>
+                            <constraint firstItem="JSb-RD-m7N" firstAttribute="centerX" secondItem="0ZT-NP-rcg" secondAttribute="centerX" constant="-217.25" id="Fdf-Yh-H5q"/>
+                            <constraint firstItem="QeY-iN-VUi" firstAttribute="centerX" secondItem="0ZT-NP-rcg" secondAttribute="centerX" id="Gyl-ab-yLB"/>
+                            <constraint firstItem="Al3-gX-oHS" firstAttribute="centerY" secondItem="0ZT-NP-rcg" secondAttribute="centerY" constant="-95.25" id="PcR-Fk-4qp"/>
+                            <constraint firstItem="JSb-RD-m7N" firstAttribute="centerY" secondItem="0ZT-NP-rcg" secondAttribute="centerY" constant="-94.25" id="QaA-Xs-ZVz"/>
+                            <constraint firstItem="cS4-ye-Xzt" firstAttribute="centerX" secondItem="0ZT-NP-rcg" secondAttribute="centerX" constant="-133" id="WOq-fe-nlr"/>
+                            <constraint firstItem="Fo5-Sv-v7v" firstAttribute="centerX" secondItem="0ZT-NP-rcg" secondAttribute="centerX" constant="-54" id="sLY-7D-XCr"/>
+                            <constraint firstItem="Fo5-Sv-v7v" firstAttribute="centerY" secondItem="0ZT-NP-rcg" secondAttribute="centerY" constant="-94.25" id="wqT-cM-1k7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="MUILabel" destination="Fo5-Sv-v7v" id="0lC-iq-jAZ"/>
+                        <outlet property="NUILabel" destination="JSb-RD-m7N" id="8Sc-Vg-FQ6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDw-4t-a7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1581" y="349"/>
         </scene>
     </scenes>
 </document>

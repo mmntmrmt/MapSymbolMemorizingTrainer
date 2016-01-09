@@ -12,15 +12,15 @@ import RealmSwift
 class LoadDataModel: NSObject {
     let realm = try! Realm()
     var q :[QuestionsModel] = []
-    func setQuestion(id:Int, answer:String) {
+    func setQuestion(id:Int, answer:Int) {
         let qs = QuestionsModel()
         
         q.append(qs)
-        q[id-1].id = id
-        q[id-1].imageData = "image" + String(id) + ".jpg"
-        q[id-1].answer = answer
+        q[id].id = id
+        q[id].imageData = "image" + String(id) + ".jpg"
+        q[id].answer = answer
         try! realm.write{
-            self.realm.add(self.q[id-1], update: true)
+            self.realm.add(self.q[id], update: true)
         }
     }
     
@@ -29,8 +29,18 @@ class LoadDataModel: NSObject {
             self.realm.deleteAll()
         }
         //setQuestion(number, answer)
-        
-        
+        setQuestion(0, answer: 1)
+        setQuestion(1, answer: 2)
+        setQuestion(2, answer: 3)
+        setQuestion(3, answer: 4)
+        setQuestion(4, answer: 1)
+        setQuestion(5, answer: 2)
+        setQuestion(6, answer: 3)
+        setQuestion(7, answer: 4)
+        setQuestion(8, answer: 1)
+        setQuestion(9, answer: 2)
+        setQuestion(10, answer: 3)
+
     }
     
     func randomlySelect() {
